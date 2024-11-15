@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/back">
+    android:background="@drawable/loc">
 
+    <!-- CardView for user inputs -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <!-- Pseudo -->
+            <!-- Pseudo input field -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -37,16 +37,17 @@
                     android:layout_marginEnd="4dp"/>
 
                 <EditText
+                    android:id="@+id/ps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/edittext_background"
                     android:hint="Enter Pseudo"
                     android:padding="6dp"
-                    android:textSize="14sp"
-                    android:background="@drawable/edittext_background" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Longitude -->
+            <!-- Longitude input field -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -63,16 +64,17 @@
                     android:layout_marginEnd="4dp"/>
 
                 <EditText
+                    android:id="@+id/longu"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/edittext_background"
                     android:hint="Enter Longitude"
                     android:padding="6dp"
-                    android:textSize="14sp"
-                    android:background="@drawable/edittext_background" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Latitude -->
+            <!-- Latitude input field -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -89,16 +91,17 @@
                     android:layout_marginEnd="4dp"/>
 
                 <EditText
+                    android:id="@+id/att"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/edittext_background"
                     android:hint="Enter Latitude"
                     android:padding="6dp"
-                    android:textSize="14sp"
-                    android:background="@drawable/edittext_background" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Numero -->
+            <!-- Numero input field -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -115,67 +118,129 @@
                     android:layout_marginEnd="4dp"/>
 
                 <EditText
+                    android:id="@+id/num"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/edittext_background"
                     android:hint="Enter Numero"
                     android:padding="6dp"
-                    android:textSize="14sp"
-                    android:background="@drawable/edittext_background" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Layout horizontal pour les deux premiers boutons -->
+    <!-- Layout horizontal for buttons (two buttons per row) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center_horizontal"
         android:layout_marginBottom="8dp">
 
-        <Button
-            android:id="@+id/btnMap"
-            android:layout_width="0dp"
+        <!-- First row of buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_style"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="View on Map"
-            android:textColor="#FFFFFF"
-            android:textSize="10sp" />
+            android:layout_marginBottom="8dp">
 
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="0dp"
+            <Button
+                android:id="@+id/btnMap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="View on Map"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" /> <!-- Added margin -->
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Add Position"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginStart="8dp"/> <!-- Added margin -->
+        </LinearLayout>
+
+        <!-- Second row of buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_style"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Add Position"
-            android:textColor="#FFFFFF"
-            android:textSize="10sp" />
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Supprimer"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" /> <!-- Added margin -->
+
+            <Button
+                android:id="@+id/btnAddPosition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Ajout Position depuis maps"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginStart="8dp"/> <!-- Added margin -->
+        </LinearLayout>
+
+        <!-- Third row of buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnSendSms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Envoyer SMS"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" /> <!-- Added margin -->
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Back"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginStart="8dp"/> <!-- Added margin -->
+        </LinearLayout>
+
     </LinearLayout>
-
-    <!-- Bouton Back sur une nouvelle ligne -->
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_style"
-        android:gravity="center"
-        android:padding="4dp"
-        android:text="Back"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp" />
 
 </LinearLayout>
